@@ -41,7 +41,7 @@ class TextPlugin(CMSPluginBase):
             self.placeholder,
             self.page
         )
-        pk = self.cms_plugin_instance.pk
+        # pk = self.cms_plugin_instance.pk  # not used - removed since does not work
         form = self.get_form_class(request)
         kwargs['form'] = form  # override standard form
         return super(TextPlugin, self).get_form(request, obj, **kwargs)
